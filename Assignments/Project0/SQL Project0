@@ -1,0 +1,72 @@
+DROP DATABASE IF EXISTS Project2;
+CREATE DATABASE Project2;
+
+USE Project2;
+
+
+CREATE TABLE customer_personal_information
+(
+	customer_id INT AUTO_INCREMENT NOT NULL,
+	first_name CHAR(50),
+	last_name VARCHAR(50),
+	email VARCHAR(50),
+	PRIMARY KEY (customer_id)
+	
+);
+
+
+CREATE TABLE customer_bank_info
+(
+	bank_id INT AUTO_INCREMENT,
+	customer_id INT,
+	account_username VARCHAR(50),
+	account_password VARCHAR(50),
+	PRIMARY KEY (bank_id),
+	CONSTRAINT customer_bank_info_fk FOREIGN KEY (customer_id) REFERENCES customer_personal_information (customer_id)
+
+);
+
+CREATE TABLE customer_bank_accounts
+(
+	account_number INT AUTO_INCREMENT,
+	bank_id INT,
+	balance float,
+	PRIMARY KEY(account_number),
+	CONSTRAINT customer_bank_accounts_fk FOREIGN KEY (bank_id) REFERENCES customer_bank_info (bank_id)
+	
+);
+
+-- INSERT INTO customer_personal_information(first_name, last_name, email) VALUES ("Emmanuel", "Tejeda", "tejeda@hotmail.com" );
+-- INSERT INTO customer_personal_information(first_name, last_name, email) VALUES ("John", "Smith", "smith@hotmail.com" );
+-- INSERT INTO customer_personal_information(first_name, last_name, email) VALUES ("Robert", "White", "white@hotmail.com" );
+-- 
+-- INSERT INTO customer_bank_info(customer_id, account_username, account_password) VALUES (1, "manny123", "password");
+-- INSERT INTO customer_bank_info(customer_id, account_username, account_password) VALUES (2, "Joe321", "wordpass");
+-- INSERT INTO customer_bank_info(customer_id, account_username, account_password) VALUES (3, "Robby456", "p@ssWord");
+-- 
+-- INSERT INTO customer_bank_accounts(bank_id, balance) VALUES (1, 1200.00);
+-- INSERT INTO customer_bank_accounts(bank_id, balance) VALUES (2, 20.00);
+-- INSERT INTO customer_bank_accounts(bank_id, balance) VALUES (3, 35.64);
+-- 
+-- UPDATE customer_bank_accounts 
+-- SET balance = balance + 1000
+-- WHERE bank_id = 1;
+-- -- 
+-- -- 
+-- -- -- 
+SELECT *
+FROM customer_personal_information AS cpi
+INNER JOIN customer_bank_info AS cbi
+	ON cpi.customer_id = cbi.customer_id
+INNER JOIN customer_bank_accounts AS cba 
+	ON cba.bank_id = cbi.bank_id
+
+-- -- -- 
+-- -- 
+-- -- 
+-- SELECT * FROM customer_personal_information;
+-- 
+-- SELECT * FROM customer_bank_info;
+-- 
+-- SELECT *FROM customer_bank_accounts;
+
