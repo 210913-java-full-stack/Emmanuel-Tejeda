@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project1</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+
+
+
+<!-- Getting sevlet -->
+
+    <div>
+        <h1>List of Flights</h1>
+        <div id = "table"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src = "table.js"></script>
+    <br>
+
+<!-- Getting new Flight from the user -->
+
+    <h1>Ticket Purchase</h1>
+
+    <form id="myForm">
+        <br><br>
+
+        <label for="message">Enter your first name:</label>
+        <input id="customerName" type="text">
+
+        <br><br>
+
+        <label for="message">Enter your last name:</label>
+        <input id="customerLastName" type="text">
+
+        <br><br>
+
+        <label for="message">Enter the flight ID:</label>
+        <input id="flightID" type="text">
+
+        <br><br>
+
+        <label for="message">Enter your ID or create one if you dont have one:</label>
+        <input id="customerID" type="text">
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+<!-- Posting that data to the back end -->
+    <script>
+
+        const form = document.getElementById("myForm");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            console.log("register");
+            submitForm(customerName.value, customerLastName.value, flightID.value, customerID.value);
+        });
+
+        async function submitForm(customerName, customerLastName, flightID, customerID) {
+            let formObject = {
+                customerName: customerName,
+                customerLastName: customerLastName,
+                flightID: flightID,
+                customerID: customerID
+            }
+
+            console.log("formObject: ", formObject);
+            console.log("POSTING...");
+            let response = await fetch("http://localhost:8080/ServeletTestPath/ping", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(formObject)
+            });  
+            console.log("POSTED");
+            //navigateToViewPage();      
+        }
+
+        function navigateToViewPage() {
+            console.log("test");
+            window.location.href = "viewItems.html?testParameter=test&username=kyle";
+        }
+        function navigate(location) {window.location.href = location;}
+
+    </script>
+
+    <br><br><br>
+
+<!-- creating the administrator Log in -->
+    <!-- <h1>Administrator Log In</h1>
+
+    <label for="message">Enter your user name:</label>
+    <input id="customerName" type="text">
+
+    <br><br>
+
+    <label for="message">Enter your password:</label>
+    <input id="customerLastName" type="text">
+
+    <br><br>
+
+    <button id="myButton" class="buttonPress">Log In</button>
+
+    <script type="text/javascript">
+        document.getElementById("myButton").onclick = function () {
+            location.href = "http://127.0.0.1:5500/admin.html";
+        };
+    </script> -->
+
+</body>
+</html>

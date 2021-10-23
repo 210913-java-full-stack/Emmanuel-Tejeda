@@ -1,0 +1,24 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unnamed" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY" nameIsGenerated="true">
+    <option name="adminPort" value="8005" />
+    <option name="contextPath" value="/ServeletTestPath" />
+    <option name="docBase" value="C:\Users\Emmanuel\IdeaProjects\ServeletTest\src\main\webapp" />
+    <option name="envOptions">
+      <map />
+    </option>
+    <option name="passParentEnvironmentVariables" value="true" />
+    <option name="port" value="8080" />
+    <option name="tomcatInfo">
+      <TomcatInfo>
+        <option name="name" value="Apache Tomcat/9.0.54" />
+        <option name="number" value="1" />
+        <option name="path" value="D:\apache-tomcat-9.0.54" />
+        <option name="version" value="9.0.54.0" />
+      </TomcatInfo>
+    </option>
+    <option name="vmOptions" value="" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS Project2;
-CREATE DATABASE Project2;
+DROP DATABASE IF EXISTS Project0;
+CREATE DATABASE Project0;
 
-USE Project2;
+USE Project0;
 
 
 CREATE TABLE customer_personal_information
