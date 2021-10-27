@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check in page</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+
+    <button id="myButton">Go to the Home page</button>
+
+    <script type="text/javascript">
+        document.getElementById("myButton").onclick = function () {
+            location.href = "http://127.0.0.1:5500/index.html";
+        };
+    </script>
+
+    <h1>Cancel Flight Page</h1>
+
+    <br><br>
+
+    <form id="cancelFlightForm">
+        
+        <label for="message">Enter the flight ID:</label>
+        <input id="flightID" type="text">
+
+        <br><br>
+
+        <label for="message">Enter your ID:</label>
+        <input id="customerID" type="text">
+
+        <br><br>
+
+        <button type="submit">Cancel Flight</button>
+
+    </form>
+
+    <script>
+
+        const form = document.getElementById("cancelFlightForm");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            submitForm(flightID.value, customerID.value);
+        });
+
+        async function submitForm(flightID, customerID) {
+            let formObject = {
+                flightID: flightID,
+                customerID: customerID
+            }
+
+            console.log("formObject: ", formObject);
+            console.log("POSTING...");
+            let response = await fetch("http://localhost:8080/ServeletTest/cancel", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(formObject)
+            });  
+            console.log("POSTED");
+            //navigateToViewPage();      
+        }
+
+        function navigateToViewPage() {
+            window.location.href = "viewItems.html?testParameter=test&username=kyle";
+        }
+        function navigate(location) {window.location.href = location;}
+
+    </script>
+
+</body>
+</html>

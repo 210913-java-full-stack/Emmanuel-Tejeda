@@ -12,20 +12,39 @@
 
 
 
-<!-- Getting sevlet -->
+    <!-- Top buttons -->
 
-    <div>
-        <h1>List of Flights</h1>
-        <div id = "table"></div>
-    </div>
+    <button id="ticketButton" class="buttonPress">Ticket Kiosk</button>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src = "table.js"></script>
-    <br>
+    <script type="text/javascript">
+        document.getElementById("ticketButton").onclick = function () {
+            location.href = "http://127.0.0.1:5500/ticketKiosk.html";
+        };
+    </script>
+
+    <button id="checkInButton" class="buttonPress">Check In</button>
+
+    <script type="text/javascript">
+        document.getElementById("checkInButton").onclick = function () {
+            location.href = "http://127.0.0.1:5500/checkIn.html";
+        };
+    </script>
+
+    
+    <button id="cancelFlightButton" class="buttonPress">Cancel Flight</button>
+
+    <script type="text/javascript">
+        document.getElementById("cancelFlightButton").onclick = function () {
+            location.href = "http://127.0.0.1:5500/cancelFlight.html";
+        };
+    </script>
+
+    <br><br>
+    
 
 <!-- Getting new Flight from the user -->
 
-    <h1>Ticket Purchase</h1>
+    <h1>Customer Registration</h1>
 
     <form id="myForm">
         <br><br>
@@ -37,16 +56,6 @@
 
         <label for="message">Enter your last name:</label>
         <input id="customerLastName" type="text">
-
-        <br><br>
-
-        <label for="message">Enter the flight ID:</label>
-        <input id="flightID" type="text">
-
-        <br><br>
-
-        <label for="message">Enter your ID or create one if you dont have one:</label>
-        <input id="customerID" type="text">
 
         <br><br>
 
@@ -62,20 +71,18 @@
         form.addEventListener("submit", function(event) {
             event.preventDefault();
             console.log("register");
-            submitForm(customerName.value, customerLastName.value, flightID.value, customerID.value);
+            submitForm(customerName.value, customerLastName.value);
         });
 
-        async function submitForm(customerName, customerLastName, flightID, customerID) {
+        async function submitForm(customerName, customerLastName) {
             let formObject = {
                 customerName: customerName,
                 customerLastName: customerLastName,
-                flightID: flightID,
-                customerID: customerID
             }
 
             console.log("formObject: ", formObject);
             console.log("POSTING...");
-            let response = await fetch("http://localhost:8080/ServeletTestPath/ping", {
+            let response = await fetch("http://localhost:8080/ServeletTest/cr", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(formObject)
@@ -92,28 +99,27 @@
 
     </script>
 
-    <br><br><br>
-
-<!-- creating the administrator Log in -->
-    <!-- <h1>Administrator Log In</h1>
-
-    <label for="message">Enter your user name:</label>
-    <input id="customerName" type="text">
-
     <br><br>
 
-    <label for="message">Enter your password:</label>
-    <input id="customerLastName" type="text">
+    <h1>Administrator Log In</h1>
 
-    <br><br>
+    <form id="adminForm">
+        <br><br>
 
-    <button id="myButton" class="buttonPress">Log In</button>
+        <label for="message">Enter Username:</label>
+        <input id="username" type="text">
 
-    <script type="text/javascript">
-        document.getElementById("myButton").onclick = function () {
-            location.href = "http://127.0.0.1:5500/admin.html";
-        };
-    </script> -->
+        <br><br>
+
+        <label for="message">Enter Password:</label>
+        <input id="password" type="text">
+
+        <br><br>
+
+        <button type="submit">Log In</button>
+
+    </form>
+
 
 </body>
 </html>

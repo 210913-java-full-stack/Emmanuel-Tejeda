@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="abee9464-ca9f-484c-8f7b-95f15f7fe315" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/.idea/runConfigurations/Unnamed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/org/example/CreatingFlights.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/org/example/Flight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/org/example/HibernateSetUp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/org/example/NewCustomer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/servlets/CORSFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/servlets/DependencyLoaderListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/servlets/InsertNewCustomer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/servlets/PassengerRegistration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/java/servlets/PingServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/webapp/WEB-INF/classes/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/org/example/CreatingFlights.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/org/example/Flight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/org/example/HibernateSetUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/org/example/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/org/example/NewCustomer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/servlets/CORSFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/servlets/DependencyLoaderListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/servlets/InsertNewCustomer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/servlets/PassengerRegistration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServeletTest/target/classes/servlets/PingServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/UI/table.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="205wYtYeRjKlmoHo0jQy3Wi0YLS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY" nameIsGenerated="true">
+      <option name="adminPort" value="8005" />
+      <option name="contextPath" value="ServeletTest" />
+      <option name="docBase" value="C:\Users\Emmanuel\Desktop\Work\Repos\Emmanuel-Tejeda\Assignments\Project1" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="passParentEnvironmentVariables" value="true" />
+      <option name="port" value="8080" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.54" />
+          <option name="number" value="0" />
+          <option name="path" value="D:\apache-tomcat-9.0.54" />
+          <option name="version" value="9.0.54.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="abee9464-ca9f-484c-8f7b-95f15f7fe315" name="Changes" comment="" />
+      <created>1635347809380</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635347809380</updated>
+    </task>
+    <servers />
+  </component>
+</project>

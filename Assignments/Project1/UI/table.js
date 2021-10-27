@@ -1,6 +1,6 @@
 
 
-$.get('http://localhost:8080/ServeletTestPath/ping', function(data) {
+$.get('http://localhost:8080/ServeletTest/cr', function(data) {
             // console.log(data);
             servStartingCity = data.startingCity;
 

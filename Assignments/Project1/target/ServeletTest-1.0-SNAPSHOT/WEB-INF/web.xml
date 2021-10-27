@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--web.xml is your depoyment descriptor
+        this is how tomcat gathers information about your project, such as welcome files,
+            available servlets, how to handle errors and exceptions, and other various
+            configurations you may want tomcat to know about.
+    It belongs in src/main/webapp/WEB-INF/ directory
+-->
+<web-app
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+        version="2.5">
+
+    <listener>
+        <listener-class>servlets.DependencyLoaderListener</listener-class>
+    </listener>
+
+    <!-- Ping Servlet -->
+    <servlet>
+        <servlet-name>customerRegistry</servlet-name>
+        <servlet-class>servlets.CustomerRegistration</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>customerRegistry</servlet-name>
+        <url-pattern>/cr</url-pattern>
+    </servlet-mapping>
+    <!-- Ping Servlet -->
+
+    <!-- CheckIn Servlet -->
+    <servlet>
+        <servlet-name>checkInServlet</servlet-name>
+        <servlet-class>servlets.CheckInServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>checkInServlet</servlet-name>
+        <url-pattern>/checkIn</url-pattern>
+    </servlet-mapping>
+    <!-- CheckIn Servlet -->
+
+    <!-- Cancel flight servlet -->
+    <servlet>
+        <servlet-name>cancelFlight</servlet-name>
+        <servlet-class>servlets.CancelFlightServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>cancelFlight</servlet-name>
+        <url-pattern>/cancel</url-pattern>
+    </servlet-mapping>
+    <!-- Cancel flight servlet -->
+
+    <!-- Ticket Kiosk Servlet -->
+    <servlet>
+        <servlet-name>ticketKiosk</servlet-name>
+        <servlet-class>servlets.TicketKioskServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ticketKiosk</servlet-name>
+        <url-pattern>/ticketKiosk</url-pattern>
+    </servlet-mapping>
+    <!-- Ticket Kiosk Servlet -->
+
+    <!-- Admin Servlet -->
+    <servlet>
+        <servlet-name>adminLogIn</servlet-name>
+        <servlet-class>servlets.AdminServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>adminLogIn</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <!-- Admin Servlet -->
+
+
+
+
+
+    <!-- CORS FILTER -->
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>servlets.CORSFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- /CORS FILTER -->
+
+</web-app>
