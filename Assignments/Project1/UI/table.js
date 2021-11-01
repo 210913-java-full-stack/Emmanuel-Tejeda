@@ -1,6 +1,5 @@
 
-
-$.get('http://localhost:8080/ServeletTest/cr', function(data) {
+$.get('http://localhost:8080/Project1/cr', function(data) {
             // console.log(data);
             servStartingCity = data.startingCity;
 

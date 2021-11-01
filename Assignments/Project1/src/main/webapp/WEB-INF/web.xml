@@ -75,6 +75,31 @@
     </servlet-mapping>
     <!-- Admin Servlet -->
 
+    <!-- Admin Flight Creation Servlet -->
+    <servlet>
+        <servlet-name>adminFlightCreation</servlet-name>
+        <servlet-class>servlets.AdminFlightCreationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>adminFlightCreation</servlet-name>
+        <url-pattern>/flightCreation</url-pattern>
+    </servlet-mapping>
+    <!-- Admin Flight Creation Servlet -->
+
+    <!-- Admin Flight Cancel -->
+    <servlet>
+        <servlet-name>adminFlightCancel</servlet-name>
+        <servlet-class>servlets.AdminFlightCancelServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>adminFlightCancel</servlet-name>
+        <url-pattern>/flightCancel</url-pattern>
+    </servlet-mapping>
+    <!-- Admin Flight Cancel -->
+
+
 
 
 

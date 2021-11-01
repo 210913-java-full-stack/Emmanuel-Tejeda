@@ -82,7 +82,7 @@
 
             console.log("formObject: ", formObject);
             console.log("POSTING...");
-            let response = await fetch("http://localhost:8080/ServeletTest/cr", {
+            let response = await fetch("http://localhost:8080/Project1/cr", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(formObject)
@@ -101,24 +101,71 @@
 
     <br><br>
 
+    <!-- Log In form -->
+<!-- 
     <h1>Administrator Log In</h1>
 
     <form id="adminForm">
         <br><br>
 
         <label for="message">Enter Username:</label>
-        <input id="username" type="text">
+        <input id="userName" type="text">
 
         <br><br>
 
         <label for="message">Enter Password:</label>
         <input id="password" type="text">
+        
+        <br><br>
+
+        <label for="message">Enter Admin ID:</label>
+        <input id="adminID" type="text">
 
         <br><br>
 
         <button type="submit">Log In</button>
 
     </form>
+
+    <script>
+
+        const adminForm = document.getElementById("adminForm");
+
+        adminForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            submitForm(userName.value, password.value, adminID.value);
+        });
+
+        async function submitForm(userName, password, adminID) {
+            let adminFormObject = {
+                userName: userName,
+                password: password,
+                adminID: adminID
+            }
+
+            console.log("adminFormObject: ", adminFormObject);
+            console.log("POSTING...");
+            let response = await fetch("http://localhost:8080/Project1/admin", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(adminFormObject)
+            });  
+            console.log("POSTED");
+            //navigateToViewPage();      
+        }
+
+        function navigateToViewPage() {
+            console.log("test");
+            window.location.href = "viewItems.html?testParameter=test&username=kyle";
+        }
+        function navigate(location) {window.location.href = location;}
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src = "admin.js"></script> -->
+
+    
 
 
 </body>

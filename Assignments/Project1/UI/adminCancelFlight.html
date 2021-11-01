@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel = "stylesheet" href = "style.css">
+
+</head>
+<body>
+
+    <button id="adminHomeButton">Go back to Admin Home</button>
+
+    <script type="text/javascript">
+        document.getElementById("adminHomeButton").onclick = function () {
+            location.href = "http://127.0.0.1:5500/admin.html";
+        };
+    </script>
+
+     <!-- Cancel Flight Form -->
+
+    <h1>Cancel Flight</h1>
+
+    <form id="CancelFlightForm">
+            
+
+        <label for="message">Enter the Flight ID:</label>
+        <input id="flightID" type="text">
+
+        <br><br>
+
+
+        <button type="submit">Cancel Flight</button>
+
+        <br><br>
+        
+    </form>
+
+
+    <script>
+
+        const cancelForm = document.getElementById("CancelFlightForm");
+
+        cancelForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            console.log("register");
+            submitForm(flightID.value);
+        });
+
+        async function submitForm(flightID) {
+            let cancelFormObject = {
+                flightID: flightID
+            }
+
+            console.log("cancelFormObject: ", cancelFormObject);
+            console.log("POSTING...");
+            let response = await fetch("http://localhost:8080/Project1/flightCancel", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(cancelFormObject)
+            });  
+            console.log("POSTED");
+            //navigateToViewPage();      
+        }
+
+        function navigateToViewPage() {
+            console.log("test");
+            window.location.href = "viewItems.html?testParameter=test&username=kyle";
+        }
+        function navigate(location) {window.location.href = location;}
+
+    </script>
+    
+</body>
+</html>

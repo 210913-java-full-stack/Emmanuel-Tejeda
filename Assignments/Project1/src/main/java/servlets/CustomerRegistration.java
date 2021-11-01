@@ -3,7 +3,11 @@ package servlets;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.CreatingFlights;
 import org.example.Flight;
+import org.example.HibernateSetUp;
 import org.example.NewCustomer;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,17 +22,31 @@ import java.util.Scanner;
 
 public class CustomerRegistration extends HttpServlet {
 
+    public Session session = HibernateSetUp.getSession();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp){
         System.out.println("in customer registration servlet get");
         try {
-            CreatingFlights thisFlight = new CreatingFlights();
-            List<Flight> allFlights = thisFlight.flightsList();
 
             ObjectMapper mapper = new ObjectMapper();
+            //Select everything from database
+            //query execute
+            //place in the data collection
 
-            resp.getWriter().write(mapper.writeValueAsString(allFlights));
+            session.beginTransaction();
+
+            List<Flight> flights = (List<Flight>) session.createQuery("from Flight").list();
+            if (flights!=null) {
+                for (Flight flight : flights) {
+//                    System.out.println(flight.getFlightID() + " - " + flight.getLandingCity() + " - " + flight.getStartingCity() );
+                }
+            }
+
+            session.getTransaction().commit();
+
+
+            resp.getWriter().write(mapper.writeValueAsString(flights));
             resp.setContentType("application/json");
             resp.setStatus(200);
 

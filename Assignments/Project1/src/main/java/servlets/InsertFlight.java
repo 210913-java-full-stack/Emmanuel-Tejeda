@@ -35,8 +35,8 @@ public class InsertFlight {
     }
 
 
-    public static Session getSession() {
-        return session;
+    public static Session getSession(Session session) {
+        return InsertFlight.session;
     }
 
     public static void setSession(Session session) {

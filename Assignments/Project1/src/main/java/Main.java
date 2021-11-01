@@ -19,7 +19,8 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println("In the main");
-//        Session session = HibernateSetUp.getSession();
+
+        Session session = HibernateSetUp.getSession();
 //
 //        InsertAdmin.setSession(session);
 //        InsertTicket.setSession(session);
@@ -38,21 +39,21 @@ public class Main
 //
 //        tx.commit();
 //        Session session = HibernateSetUp.getSession();
-//        InsertFlight.setSession(session);
+        InsertFlight.setSession(session);
 //
 ////
-//        CreatingFlights thisFlight = new CreatingFlights();
-//        List<Flight> allFlights = thisFlight.flightsList();
-//
-//
-//        Transaction tx = session.beginTransaction();
-//
-//        for(int i = 0; i < 4; i++)
-//        {
-//            InsertFlight.saveNewFlight(allFlights.get(i));
-//        }
-//
-//        tx.commit();
+        CreatingFlights thisFlight = new CreatingFlights();
+        List<Flight> allFlights = thisFlight.flightsList();
+
+
+        Transaction tx = session.beginTransaction();
+
+        for(int i = 0; i < 4; i++)
+        {
+            InsertFlight.saveNewFlight(allFlights.get(i));
+        }
+
+        tx.commit();
 
 //        Session session = HibernateSetUp.getSession();
 //

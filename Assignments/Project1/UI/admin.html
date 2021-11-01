@@ -18,15 +18,24 @@
         };
     </script>
 
-    <br><br>
-    
-    <button id="flightButton" class="buttonPress">Flight Creation</button>
+    <button id="cancelFlightButton">Cancel Flight</button>
 
     <script type="text/javascript">
-        document.getElementById("flightButton").onclick = function () {
-            location.href = "http://127.0.0.1:5500/flightCreation.html";
+        document.getElementById("cancelFlightButton").onclick = function () {
+            location.href = "http://127.0.0.1:5500/adminCancelFlight.html";
         };
     </script>
+
+    <!-- <button id="seeAllFlights">See All Flights In Progress</button>
+
+    <script type="text/javascript">
+        document.getElementById("seeAllFlights").onclick = function () {
+            location.href = "http://127.0.0.1:5500/listOfTickets.html";
+        };
+    </script> -->
+
+
+    
 
 <!-- Showing all flights -->
     <h1>Admin Site</h1>
@@ -37,7 +46,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src = "table.js"></script>
+    <script src = "ticket.js"></script>
 
     <br><br>
 
@@ -45,30 +54,63 @@
 
 <!-- Flight Scheduler -->
 
-    <form id="adminForm">
+    <form id="flightForm">
         
 
         <label for="message">Enter the city of departure:</label>
-        <input id="customerName" type="text">
+        <input id="departureCity" type="text">
 
         <br><br>
 
         <label for="message">Enter the city of arrival :</label>
-        <input id="customerLastName" type="text">
+        <input id="arrivalCity" type="text">
 
         <br><br>
 
-        <label for="message">Enter the flight ID:</label>
-        <input id="flightID" type="text">
-        
-        <br><br>
-
-        <button type="register">Create flight</button>
+        <button type="submit">Create flight</button>
 
         <br><br>
         
 
     </form>
+
+    <script>
+
+        const form = document.getElementById("flightForm");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            console.log("register");
+            submitForm(departureCity.value, arrivalCity.value);
+        });
+
+        async function submitForm(departureCity, arrivalCity) {
+            let formObject = {
+                departureCity: departureCity,
+                arrivalCity: arrivalCity,
+            }
+
+            console.log("formObject: ", formObject);
+            console.log("POSTING...");
+            let response = await fetch("http://localhost:8080/Project1/flightCreation", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(formObject)
+            });  
+            console.log("POSTED");
+            //navigateToViewPage();      
+        }
+
+        function navigateToViewPage() {
+            console.log("test");
+            window.location.href = "viewItems.html?testParameter=test&username=kyle";
+        }
+        function navigate(location) {window.location.href = location;}
+
+    </script>
+
+    <br><br>
+
 
 
 </body>
